@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+/**
+ * @author amomin
+ *
+ */
+package maximumPrimeProduct;
