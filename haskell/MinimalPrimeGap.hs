@@ -2,7 +2,8 @@ module MinimalPrimeGap where
 
 import Sieve
 
-primes = sieve 1000
+--primes is from Sieve.primes, the infinite list of primes
+--computed by successively filtering out multiples of primes
 
 gaps = zipWith (-) (tail . tail $ primes) (tail primes)
 
