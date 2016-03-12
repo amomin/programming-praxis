@@ -1,3 +1,13 @@
+# February 26 2016
+#
+# 1. Create a set data structure that provides the following operations, which 
+# must all operate in constant time: insert, delete, member?, and random
+# The random operation should return a random element from the set.
+#
+# and
+#
+# 2. Given an array, find the first element that appears an even number of times.
+
 import random
 
 class RSet:
