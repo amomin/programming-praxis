@@ -9,44 +9,9 @@
 
 import sys, os, inspect
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+sys.path.append(os.path.dirname(os.path.realpath(__file__) + '/..'))
+import Boat
 import TwoBoysCanoe
-
-# Define a data structure to represent canoes
-class Boat:
-    def __init__(self):
-        self.s1 = 0
-        self.s2 = 0
-        self.s3 = 0
-
-    def fits(self, x):
-        return (self.s3 == 0) and (self.weight() + x <= 150)
-
-    def weight(self):
-        return self.s1 + self.s2 + self.s3
-
-    def string(self):
-        return ("(%d,%d,%d)" % (self.s1,self.s2,self.s3))
-
-    def seat(self, x):
-        if not self.fits(x):
-            raise Exception("Does not fit on boat")
-        else:
-            if self.s1 == 0:
-                self.s1 = x
-            elif self.s2 == 0:
-                self.s2 = x
-            else:
-                self.s3 = x
-
-    def non_empty_seats(self):
-        i = 0
-        if self.s1 != 0:
-            i += 1
-        if self.s2 != 0:
-            i += 1
-        if self.s3 != 0:
-            i += 1
-        return i
 
 # Solution from Two Children problem
 def TwoChildrenSol(lst):
@@ -54,7 +19,7 @@ def TwoChildrenSol(lst):
     sol = []
     sol2 = TwoBoysCanoe.canoes(lst)
     for (x,y) in sol2:
-        b = Boat()
+        b = Boat.Boat3()
         b.seat(x)
         if y:
             b.seat(y)
@@ -68,17 +33,17 @@ def basecase(N, lst):
     if lst[N-1] > 150:
         return False
     if N == 1:
-        b = Boat()
+        b = Boat.Boat3()
         b.seat(lst[0])
         return [b]
     if N == 2:
-        b = Boat()
+        b = Boat.Boat3()
         b.seat(lst[0])
         if b.fits(lst[1]):
             b.seat(lst[1])
             return [b]
         else:
-            b2 = Boat()
+            b2 = Boat.Boat3()
             b2.seat(lst[1])
             return [b,b2] 
 
@@ -89,7 +54,7 @@ def basecase(N, lst):
 # Combine the two solutions and compare to the optimal
 # solution
 def fillboat(lst, i, j, k):
-    b = Boat()
+    b = Boat.Boat3()
     b.seat(lst[i])
     leftover = lst[:]
     del leftover[i]
