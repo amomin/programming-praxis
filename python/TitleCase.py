@@ -11,10 +11,12 @@
 #
 ####################################################################################
 
+# One liner
 def sol1(strIn):
-   words = strIn.split(" ")
-   words = [x[:1].upper() + x[1:].lower() for x in words]
-   return " ".join(words)
+   #words = strIn.split(" ")
+   #titleCasedWords = [x[:1].upper() + x[1:].lower() for x in words]
+   #return " ".join(titleCasedWords)
+   return " ".join([x[:1].upper() + x[1:].lower() for x in strIn.split(" ")])
 
 if __name__ == '__main__':
     print sol1("The Big bAD WoLfIe jUmPed oer the HOUSEANDOROF")
