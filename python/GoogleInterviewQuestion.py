@@ -30,7 +30,7 @@ def naiveSol(words):
                 if n > maxprod:
                     maxprod = n
                     maxpair = (words[i], words[j])
-    print "Brute", _loopcount
+    #print "Brute", _loopcount
     return maxpair
 
 # Order the words in descending length, and then return on the first
@@ -69,7 +69,7 @@ def heapSol(words):
         a = words[i].lower()
         b = words[j].lower()
         if len(set(a).intersection(b)) == 0:
-            print "Heap", _loopcount
+            #print "Heap", _loopcount
             return (words[i], words[j])
         if (i + 1 < j) and ((i+1,j) not in checked):
             alen = len(words[i+1])
@@ -81,7 +81,7 @@ def heapSol(words):
             blen = len(words[j+1])
             heapq.heappush(h, (-alen*blen, (i,j + 1)))
             checked[(i,j+1)] = True
-    print "Heap", _loopcount
+    #print "Heap", _loopcount
     return ()
 
 import random, string, time
