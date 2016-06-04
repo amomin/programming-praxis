@@ -3,8 +3,7 @@
  *
  * https://programmingpraxis.com/2016/05/31/learn-a-new-language-4/
  *
- * Implementing quick sort (or something like it in a functional spirit)
- * in Scala.
+ * Implementing a "quick-like" sort in Scala.
  */
 
 object QuickishSort {
@@ -17,7 +16,6 @@ object QuickishSort {
   }
   
   def main(args: Array[String]) {
-    println("Hello world");
     var sorted =sort(Array[Int](12,45,65,1,45,23,76,4,36,17,72,14,64));
     for (i <- sorted) {
       println(i);
