@@ -49,6 +49,20 @@ def sol3(n):
         res = filter(lambda x: (x == i) or (x % i != 0), res)
     return res
 
+# Sieve of Eratothsenes, but might be faster because each step i
+# only visits about n/i numbers
+def sol3b(n):
+    res = []
+    sieve = [True] * (n + 1)
+    int_sn = int(math.sqrt(n)) + 1
+    for i in range(2, int_sn):
+        if sieve[i]:
+            for j in range(2, n/i + 1):
+                sieve[j*i] = False
+    for p in range(2, len(sieve)):
+        if sieve[p]: res.append(p)
+    return res
+
 # "Fast" Modular power raising - should be identical to pow(b, e, m)
 # on "admissible" input
 def sol4(b, e, m):
@@ -78,6 +92,8 @@ if __name__ == '__main__':
 
     print "Demo Sieve of Eratothsenes (up to 50)"
     print sol3(50)
+    print "Demo Sieve of Eratothsenes (up to 50)"
+    print sol3b(50)
 
     print "Demo mod power raising"
     #print sol4(2,-1,13)
