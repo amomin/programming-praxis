@@ -1,6 +1,8 @@
 ################## A Dozen Lines of Code ######################
 ###################### June 03, 2016  #########################
 #
+# https://programmingpraxis.com/2016/06/03/a-dozen-lines-of-code-2/
+#
 # Your task is to write some interesting and useful program
 # in no more than a dozen lines of code.
 #
