@@ -3,3 +3,5 @@
 .metadata/
 bin/
 *.swp
+haskell/*.hi
+haskell/*.o
