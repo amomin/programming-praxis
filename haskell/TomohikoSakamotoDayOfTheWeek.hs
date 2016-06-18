@@ -69,9 +69,10 @@ year (DateYMD y _ _) = y
 sol :: DateYMD -> Weekday
 sol ymd = weekdayFromInt $ mod (y + (div y 4) - (div y 100) + (div y 400) + t + d) 7
     where
-        y = year ymd
+        y1 = year ymd
         m = month ymd
         d = day ymd
+        y = if m > 2 then y1 else y1-1
         t = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4] !! (m-1)
 
 main :: IO ()
@@ -86,3 +87,6 @@ main = do
     putStrLn ((show . sol $ DateYMD 1941 3  19) ++ " March 19, 1941")
     putStrLn ((show . sol $ DateYMD 1777 07 04) ++ " July 4, 1777")
     putStrLn ((show . sol $ DateYMD 1867 07 01) ++ " July 1, 1867")
+    putStrLn ((show . sol $ DateYMD 2016 01 01) ++ " January 1, 2016")
+    putStrLn ((show . sol $ DateYMD 2016 02 28) ++ " February 28, 2016")
+    putStrLn ((show . sol $ DateYMD 2016 02 29) ++ " February 29, 2016")

@@ -41,6 +41,7 @@
 def dayOfTheWeek(y, m, d):
     y = int(y)
     m = int(m)
+    y -= 1 if m < 3 else 0
     d = int(d)
     t = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4];
     return (y + y/4 - y/100 + y/400 + t[m-1] + d) % 7
@@ -56,3 +57,5 @@ if __name__ == '__main__':
     print d[dayOfTheWeek(1941,03,19)], "March 19, 1941"
     print d[dayOfTheWeek(1777,07,4)], "July 4, 1777"
     print d[dayOfTheWeek(1867,07,1)], "July 1, 1867"
+    print d[dayOfTheWeek(2016,02,28)], "February 28, 2016"
+    print d[dayOfTheWeek(2016,02,29)], "February 29, 2016"
