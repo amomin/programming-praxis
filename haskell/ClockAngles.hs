@@ -36,11 +36,13 @@ angleDifference (ClockTime h m) = min_diff where
     a1 = mod (div (60 * _h + _m) 2) 360
     a2 = mod (6 * _m) 360
 
+
 main :: IO ()
 main = do
     print $ ClockTime 1 20
     print $ angleDifference (ClockTime 1 20)
 
+    -- output_clocktime_angle_difference :: ClockTime -> IO()
     let output_clocktime_angle_difference = print . (\c -> "At " ++ show c ++ " angle difference is " ++ (show $ angleDifference c))
 
     let cts_on_the_hour = map (\x -> ClockTime x 0) [0..11]
