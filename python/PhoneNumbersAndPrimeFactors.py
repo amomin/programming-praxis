@@ -13,25 +13,7 @@
 
 import math, random, time, pandas as pd
 
-# Equivalent to:
-#import NumberTheory
-#factor = NumberTheory.factor
-def factor(n):
-    f=2
-    _max = int(math.sqrt(n))+1
-    _factors=[]
-    while n>1 and f< _max:
-        k=0
-        while (n%f==0):
-            k+=1
-            n/=f
-        if k>0:
-            _factors.append([f,k])
-            _max = int(math.sqrt(n))+1
-        f+=1
-    if n > 1:
-        _factors.append([n,1])
-    return _factors
+from lib.NumberTheory import factor
 
 def numberOfFactors(n):
     return len(factor(n))

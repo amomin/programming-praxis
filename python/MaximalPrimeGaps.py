@@ -1,6 +1,4 @@
-import sys, os, inspect
-sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/lib')
-import PrimeSieve, MillerTest
+import lib.PrimeSieve as PrimeSieve, lib.MillerTest as MillerTest
 
 # Compute all prime gaps
 def maximalPrimeGaps(n):

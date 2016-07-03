@@ -14,9 +14,8 @@
 #
 #######################################################################
 
-import sys, os, inspect, math, time
-sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/lib')
-import PrimeSieve, MillerTest
+import math, time
+import lib.PrimeSieve as PrimeSieve, lib.MillerTest as MillerTest
 
 prime_cache = []
 CACHEMAX = 10000

@@ -12,9 +12,8 @@
 # , but he erroneously reported that pi(106) = 78526, whereas the correct 
 # value is 78498. We will recreate Legendre's calculation in today's exercise.
 
-import sys, os, inspect
-sys.path.append(os.path.dirname(os.path.realpath(__file__)) + '/lib')
-import PrimeSieve
+import sys
+import lib.PrimeSieve as PrimeSieve
 from math import sqrt, floor, ceil
 
 class LegendrePrimeCount:
