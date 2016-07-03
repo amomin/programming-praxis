@@ -1,5 +1,10 @@
 # Example on debugging with pdb, vimpdb
+#
+# See https://github.com/gotcha/vimpdb for more information
+# on using vimpdb in particular
+#
 
+# Simple function calling pdb to debug
 def dbg_pdb():
     import pdb; pdb.set_trace()
     x = 1
@@ -9,6 +14,7 @@ def dbg_pdb():
         print i
     return True
 
+# Simple function calling vimpdb to debug
 def dbg_vimpdb():
     import vimpdb; vimpdb.set_trace()
     x = 1
