@@ -19,9 +19,9 @@
 -- numbers less than a given limit.
 -- 
 -- Compile with
--- $ ghc -main-is HighlyCompositNumbers \
--- $    -o bin/HighlyCompositNumbers. \
--- $    haskell/HighlyCompositNumbers.hs
+-- $ ghc -main-is HighlyCompositeNumbers \
+-- $    -o bin/HighlyCompositeNumbers \
+-- $    haskell/HighlyCompositeNumbers.hs
 --
 -- Or switch the module name to "Main" to compile without the -main-is flag
 
