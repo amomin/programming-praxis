@@ -3,7 +3,7 @@ package diminishingGapSort;
 import java.util.Arrays;
 import java.util.Comparator;
 
-/** <h1> <a href="">
+/** <h1> <a href="https://programmingpraxis.com/2016/08/19/diminishing-gap-sort/">
  *  Diminishing Gap Sort
  *  </a> </h1>
  * 
