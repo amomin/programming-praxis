@@ -1,0 +1,26 @@
+Maximum K Items Out Of N
+
+https://programmingpraxis.com/2016/08/30/maximum-k-items-out-of-n/2/
+
+Today’s exercise is to write a program that, given n integers, outputs the list of k integers whose sum is maximum. That looks easy, but there is a catch: You must provide three solutions, one that runs in O(n log n) time, one that runs in O(n log k) time, and one that runs in O(n) time.
+
+Your task is to write three programs as described above.
+
+####################################################################################
+
+The first two are easy:
+
+1.  Sort and sum the first k.
+2.  Use a priority (max) queue of bounded size k.  Loop through the list and
+    insert into the max queue.  At the end remove and sum the k items left in
+    the queue.  The intial loop takes `O(nlog(k))` (`n` iterations, and each takes
+    `O(k)` for the insert into the priority queue).
+3.  In theory, you could use a Fibonacci heap (or even a paring or binomial heap)
+    to acheive `O(1)` insertion into the heap.
+    Or, you can use the quicksort partition method to partition until the kth item
+    is in place.  At that point, the first k indices are occupied by the k largest
+    items, which you can then sum.  The parititioning takes `O(n)` time - in general
+    this is averaged time, although it can be made theoretically `O(n)` by careful
+    but costly choice of partition values (see CLRS).
+
+Answer seems to be the same as the read-after on the praxis page :)
