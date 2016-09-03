@@ -5,3 +5,4 @@ bin/
 *.swp
 haskell/*.hi
 haskell/*.o
+java/bin/*
