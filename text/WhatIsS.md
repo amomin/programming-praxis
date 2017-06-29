@@ -15,9 +15,7 @@ for (int i=0; i<X; i++)
 So WOLOG `x<=y<=z`.
 
 
-Second let me assume the sum is `1..X` inclusive (this is easy to achieve by a small change of variables (`x=x+1,...`).
-
-Then
+Also notice that this is equivalent to summing 1, and that we can shift the summation from `0<=i<x` to `1<=i<=x`.  Then
 
 ```
 =sum(i=1_X)sum(j=i+1_Y)sum(j+1_Z) 1
@@ -47,4 +45,4 @@ Where we use the formula for the sum of squares:
 ```
 n(n+1)(2n+1)/6
 ```
-which is easy to guess if you know it's a cubic with denominator 6and leading co-efficient 1 (by using the first 3 sums `1,1+4=5,1+4+9=14` to find the co-efficients.
+which is easy to guess if you know it's a cubic with denominator 6 and leading co-efficient 1 (by using the first 3 sums `1,1+4=5,1+4+9=14` to find the co-efficients.
