@@ -67,10 +67,16 @@ main = do
                        [1,3,4], [7,8,9]
                       ]
                      ] :: [[[Int]]]
-    let run_testcase = \test_case -> do
-                                print $ "Nuts: " ++ show (test_case!!0)
-                                print $ "Bolts: " ++ show (test_case!!1)
-                                print $ solution1 (test_case!!0) (test_case!!1)
-                                print $ solution2 (test_case!!0) (test_case!!1)
+    let run_testcase = \test_case -> 
+                                (print $ "Nuts: " ++ show (test_case!!0)) >>
+                                (print $ "Bolts: " ++ show (test_case!!1)) >>
+                                (print $ solution1 (test_case!!0) (test_case!!1)) >>
+                                (print $ solution2 (test_case!!0) (test_case!!1))
+-- Alt: with do syntax:                                
+--    let run_testcase = \test_case -> do
+--                                print $ "Nuts: " ++ show (test_case!!0)
+--                                print $ "Bolts: " ++ show (test_case!!1)
+--                                print $ solution1 (test_case!!0) (test_case!!1)
+--                                print $ solution2 (test_case!!0) (test_case!!1)
     
     mapM_ run_testcase test_cases
