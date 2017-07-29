@@ -28,14 +28,14 @@ def Reroot(tree, node):
         tree.right = s
         return node
 
-def _MakeTree(l):
+def _MakeBST(l):
     t = Tree(l[0])
     for v in l[1:]:
         t.insert(v)
     return t
 
 def main():
-    t = _MakeTree([40, 20, 30, 10, 50, 45, 47, 48, 15, 5])
+    t = _MakeBST([40, 20, 30, 10, 50, 45, 47, 48, 15, 5])
     PrintTree(t)
     node = t.right.left
     t = Reroot(t, node)
