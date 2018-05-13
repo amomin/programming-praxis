@@ -28,7 +28,7 @@
     (helper array-list item left right)))
 
 ;; O(nlog(n)) solution - sort is nlog(n), and binary search is done
-;; n times in O(log(n)) time.
+;; n times in O(log(n)) time and O(n) space.
 ;; Could make this generic by passing in the comparator instead of hardcoding
 ;; <.
 (defun replace-by-rank (array-list)
@@ -36,3 +36,19 @@
     (map '(vector)
 	 (lambda (x) (binary-search-index sorted x))
 	 array-list)))
+
+;; Second solution in a simpler, functional style.
+;; We take the array, replace elements int-val by
+;; (index int-val), sort by int-val, and then map to the index.
+;; No need for a binary search since the sort/indexing does all the work.
+;; Also O(nlogn) time and O(n) space.
+(defun replace-by-rank-2 (array-list)
+  (labels ((indexify (alist)
+	      (loop :for x :across alist
+	            :for i :from 0
+	            :collect (list i x)))
+	   (drop-value (plain-list)
+	      (loop :for x :in plain-list
+		 :collect (first x))))
+    (drop-value (sort (indexify array-list)
+		      (lambda (x y) (< (second x) (second y)))))))
