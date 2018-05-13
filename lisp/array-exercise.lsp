@@ -27,6 +27,10 @@
 	(right (- (array-dimension array-list 0) 1)))
     (helper array-list item left right)))
 
+;; O(nlog(n)) solution - sort is nlog(n), and binary search is done
+;; n times in O(log(n)) time.
+;; Could make this generic by passing in the comparator instead of hardcoding
+;; <.
 (defun replace-by-rank (array-list)
   (let ((sorted (sort (copy-seq array-list) (function <))))
     (map '(vector)
