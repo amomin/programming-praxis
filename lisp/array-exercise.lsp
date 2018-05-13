@@ -46,17 +46,19 @@
      original list with the value replaced by the index.
      No need for a binary search since the sort/indexing does all the work.
      Also O(nlogn) time and O(n) space, sorting twice."
-  (labels ((indexify (alist)
+  (labels ((compare-by-second (x y) (< (second x) (second y)))
+           (indexify (alist)
+	     "val -> (index val)"
 	      (loop :for x :across alist
 	            :for i :from 0
 	            :collect (list i x)))
 	   (replace-by-sorted-index (indexed-list)
+	     "(index val) -> (index sorted-index)"
 	      (loop :for x :in indexed-list
 	            :for i :from 0
-		 ;:collect (list (first x) i)))
 		 :collect (list i (first x))))
-	   (compare-by-second (x y) (< (second x) (second y)))
 	   (drop-value (plain-list)
+	     "(index value) -> index"
 	      (loop :for x :in plain-list
 		 :collect (first x))))
     (drop-value
